@@ -1,34 +1,24 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<?php include __DIR__ . '/partials/head.php' ?>
 
-class Movies
-{
-    public $title;
-    public $year;
-    public $genres;
+<body>
+    <div id="app">
+        <div class="container">
+            <?php include __DIR__ . '/partials/header.php' ?>
+            <?php include __DIR__ . '/partials/main.php' ?>
+            <?php include __DIR__ . '/partials/footer.php' ?>
+        </div>
+    </div>
+</body>
 
-    function __construct($_title, $_year, $_genres)
-    {
-        $this->title = $_title;
-        $this->year = strval($_year);
-        $this->genres = $_genres;
-    }
+<!-- Vue -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    public function beforeMillenium()
-    {
-        if (intval($this->year) >= 2000) {
-            $this->year .= " AM";
-        } else {
-            $this->year .= " BM";
-        }
-    }
-}
+<!-- Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-$movie1 = new Movies("Il silenzio degli innocenti", 1991, 'Thriller');
-$movie2 = new Movies("School Of Rock", 2004, ['Commedia', 'Musica']);
+<!-- JS -->
+<script src="js/script.js"></script>
 
-$movie1->beforeMillenium();
-$movie2->beforeMillenium();
-
-
-var_dump($movie1);
-var_dump($movie2);
+</html>
