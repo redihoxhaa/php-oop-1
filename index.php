@@ -3,8 +3,8 @@
 <?php include __DIR__ . '/partials/head.php' ?>
 
 <body>
-    <div id="app">
-        <div class="container">
+    <div id="app" v-cloak>
+        <div class="container d-flex flex-column">
             <?php include __DIR__ . '/partials/header.php' ?>
             <?php include __DIR__ . '/partials/main.php' ?>
             <?php include __DIR__ . '/partials/footer.php' ?>
