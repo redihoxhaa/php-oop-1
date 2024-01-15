@@ -4,16 +4,18 @@ class Movies
 {
     public $title;
     public $year;
+    public $genres;
 
-    function __construct($_title, $_year)
+    function __construct($_title, $_year, $_genres)
     {
         $this->title = $_title;
-        $this->year = $_year;
+        $this->year = strval($_year);
+        $this->genres = $_genres;
     }
 
     public function beforeMillenium()
     {
-        if ($this->year >= 2000) {
+        if (intval($this->year) >= 2000) {
             $this->year .= " AM";
         } else {
             $this->year .= " BM";
@@ -21,8 +23,8 @@ class Movies
     }
 }
 
-$movie1 = new Movies("Il silenzio degli innocenti", 1991);
-$movie2 = new Movies("School Of Rock", 2004);
+$movie1 = new Movies("Il silenzio degli innocenti", 1991, 'Thriller');
+$movie2 = new Movies("School Of Rock", 2004, ['Commedia', 'Musica']);
 
 $movie1->beforeMillenium();
 $movie2->beforeMillenium();
